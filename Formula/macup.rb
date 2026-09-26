@@ -14,13 +14,14 @@ class Macup < Formula
 
   # Dependencies are downloaded here; the build that follows runs offline.
   # SwiftPM's own sandbox cannot nest inside Homebrew's, which still confines
-  # both phases. Package.resolved pins every dependency revision.
+  # both phases (std_swift_args disables it for the build on macOS).
+  # Package.resolved pins every dependency revision.
   def fetch
     system "swift", "package", "resolve", "--disable-sandbox", "--force-resolved-versions"
   end
 
   def install
-    args = ["--disable-sandbox", "--force-resolved-versions", *std_swift_args]
+    args = ["--force-resolved-versions", *std_swift_args]
     system "swift", "build", *args, "--product", "macup"
     bin.install "#{Utils.safe_popen_read("swift", "build", *args, "--show-bin-path").chomp}/macup"
     generate_completions_from_executable(bin/"macup", "--generate-completion-script")
