@@ -1,8 +1,8 @@
 class Macup < Formula
-  desc "See what is outdated across Homebrew, npm, mise, and macOS"
+  desc "Review and apply updates across Homebrew, npm, mise, and macOS"
   homepage "https://github.com/sd2389/macup"
-  url "https://github.com/sd2389/macup/archive/refs/tags/v0.1.0.tar.gz"
-  sha256 "99c59475f6b4d5807404e33964d753dfe037722251be87de9a4892a73eb3ed6a"
+  url "https://github.com/sd2389/macup/archive/refs/tags/v0.4.0.tar.gz"
+  sha256 "bd24233dd5dbbfb1134ec31077bd9a88fc9a7a33852627a36d90dd29a2171093"
   license "Apache-2.0"
   head "https://github.com/sd2389/macup.git", branch: "main"
 
